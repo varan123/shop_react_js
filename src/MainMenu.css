@@ -1,0 +1,14 @@
+nav {
+    text-align: right;
+    padding: 3px;
+    background-color: DarkSalmon;
+    color: white;
+}
+
+nav a {
+    padding: 20px;
+}
+
+nav a:hover {
+    color: yellow;
+}
