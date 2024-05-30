@@ -15,7 +15,7 @@ function Cart() {
                 <h2>{cartLine.name}</h2>
                 <p>Price: {cartLine.price}</p>
                 <p>Quantity:
-                    <input className="quantity" type="number" onKeyDown="return false" min="1" value={cartLine.quantity} onChange={(e) => {
+                    <input className="quantity" type="number" min="1" value={cartLine.quantity} onChange={(e) => {
                         //clone the current cart
                         const cart2 = [...cart];
                         //find the cart line by product id

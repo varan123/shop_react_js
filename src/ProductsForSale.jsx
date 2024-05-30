@@ -1,14 +1,16 @@
-import product_list from './data/product_list';
 import PropTypes from 'prop-types';
 import { useOutletContext } from "react-router-dom";
+import { useContext } from 'react';
+import { ProductContext } from './ProductContext.jsx'
 
 
 function ProductsForSale() {
     console.log('ProductsForSale');
+    const { products, setProducts } = useContext(ProductContext);
     const { cart, setCart } = useOutletContext();
     return (
         <>
-            {product_list.map(product => (
+            {products.map(product => (
                 <div key={product.id}>
                     <h2>{product.name}</h2>
                     <p>{product.description}</p>
@@ -50,7 +52,9 @@ function ProductsForSale() {
 
 ProductsForSale.propTypes = {
     currentCart: PropTypes.array,
-    setCurrentCart: PropTypes.func
+    setCurrentCart: PropTypes.func,
+    products: PropTypes.array,
+    setProducts: PropTypes.func
 };
 
 export default ProductsForSale;

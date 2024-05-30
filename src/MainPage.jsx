@@ -2,7 +2,6 @@ import { useState } from 'react';
 import Logo from './Logo';
 import MainMenu from './MainMenu';
 import { Outlet } from 'react-router-dom';
-import product_list from './data/product_list';
 
 
 function MainPage() {
