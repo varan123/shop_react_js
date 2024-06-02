@@ -1,21 +1,28 @@
 const product_list = [
     {
         id: 1,
-        name: 'Product 1',
-        price: 100,
-        description: 'This is product 1'
+        name: 'Potato',
+        price: 3.99,
+        description: 'The potato is a versatile root vegetable, commonly known for its starchy texture and mild flavor. It is a staple in many cuisines around the world and can be prepared in a multitude of ways, including boiling, baking, frying, and mashing.'
     },
     {
         id: 2,
-        name: 'Product 2',
-        price: 200,
-        description: 'This is product 2'
+        name: 'Onion',
+        price: 2.20,
+        description: 'A versatile vegetable, onions add flavor to dishes. Available in varieties like yellow, red, and white, they can be eaten raw, cooked, or caramelized.'
     },
     {
         id: 3,
-        name: 'Product 3',
-        price: 300,
-        description: 'This is product 3'
+        name: 'Garlic',
+        price: 5.67,
+        description: 'A pungent bulb used for flavoring, garlic is essential in many cuisines. It can be used raw, cooked, or roasted to enhance the taste of various dishes.'
+    },
+    {
+        id: 4,
+        name: 'Eggplant',
+        price: 4.20,
+        description: 'A versatile, spongy vegetable with a mild flavor, eggplant is commonly used in various cuisines. It can be grilled, roasted, baked, or sautéed.'
+
     }];
 
 export default product_list;
