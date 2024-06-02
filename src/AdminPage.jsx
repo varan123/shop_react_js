@@ -52,9 +52,6 @@ function AdminPage() {
                 <button type="submit">Create</button>
             </form>
         </>
-
-
-
     );
 }
 

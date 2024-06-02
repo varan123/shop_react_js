@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
-import { useOutletContext } from "react-router-dom";
 import './Cart.css';
+import { CartContext } from './CartContext.jsx';
+import { useContext } from 'react';
 
 function Cart() {
 
-    const { cart, setCart } = useOutletContext();
+    const { cart, setCart } = useContext(CartContext);
 
     let returnVal = ""
 
