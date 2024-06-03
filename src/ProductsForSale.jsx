@@ -1,17 +1,22 @@
 import PropTypes from 'prop-types';
-import { useContext } from 'react';
-import { ProductContext } from './context/ProductContext.jsx'
-import { CartContext } from './context/CartContext.jsx'
+import { useContext, Image } from 'react';
+import { ProductContext } from './context/ProductContext.jsx';
+import { CartContext } from './context/CartContext.jsx';
+import './ProductsForSale.css';
 
 
 function ProductsForSale() {
     console.log('ProductsForSale');
     const { products, setProducts } = useContext(ProductContext);
     const { cart, setCart } = useContext(CartContext);
+    const img_src = (img) => { return new URL(img, import.meta.url).href; };
+
     return (
         <>
             {products.map(product => (
-                <div key={product.id}>
+               
+            <div className='product' key={product.id}>
+                    <img src={img_src(product.img)} alt={product.name} />
                     <h2>{product.name}</h2>
                     <p>{product.description}</p>
                     <p>Price: {product.price.toFixed(2)}</p>

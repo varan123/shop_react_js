@@ -1,0 +1,23 @@
+header {
+    background-color: #282c34;
+    min-height: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+footer {
+    min-height: 3vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(2vmin);
+    color: white;
+    text-align: center;
+    padding: 2px;
+    background-color: DarkSalmon;
+}
