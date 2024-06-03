@@ -3,6 +3,7 @@ import MainMenu from './MainMenu';
 import { Outlet } from 'react-router-dom';
 import { useContext } from 'react';
 import { CartContext } from './context/CartContext';
+import './MainPage.css';
 
 
 function MainPage() {
