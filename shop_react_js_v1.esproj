@@ -12,5 +12,6 @@
     <Folder Include="public\" />
     <Folder Include="src\components\" />
     <Folder Include="src\images\" />
+    <Folder Include="src\pages\" />
   </ItemGroup>
 </Project>

@@ -2,7 +2,7 @@ import Logo from './Logo';
 import MainMenu from './MainMenu';
 import { Outlet } from 'react-router-dom';
 import { useContext } from 'react';
-import { CartContext } from './CartContext';
+import { CartContext } from './context/CartContext';
 
 
 function MainPage() {

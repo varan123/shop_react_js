@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { useContext } from 'react';
-import { ProductContext } from './ProductContext.jsx'
-import { CartContext } from './CartContext.jsx'
+import { ProductContext } from './context/ProductContext.jsx'
+import { CartContext } from './context/CartContext.jsx'
 
 
 function ProductsForSale() {
@@ -14,7 +14,7 @@ function ProductsForSale() {
                 <div key={product.id}>
                     <h2>{product.name}</h2>
                     <p>{product.description}</p>
-                    <p>Price: {product.price}</p>
+                    <p>Price: {product.price.toFixed(2)}</p>
                     <button onClick={() => {
                         //prepare cart line
                         //cart line is project plus quantity

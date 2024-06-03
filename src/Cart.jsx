@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import './Cart.css';
-import { CartContext } from './CartContext.jsx';
+import { CartContext } from './context/CartContext.jsx';
 import { useContext } from 'react';
 
 function Cart() {
@@ -14,7 +14,7 @@ function Cart() {
         returnVal = cart.map(cartLine => (
             <div key={cartLine.id}>
                 <h2>{cartLine.name}</h2>
-                <p>Price: {cartLine.price}</p>
+                <p>Price: {cartLine.price.toFixed(2)}</p>
                 <p>Quantity:
                     <input className="quantity" type="number" min="1" value={cartLine.quantity} onChange={(e) => {
                         //clone the current cart
@@ -54,6 +54,10 @@ function Cart() {
     if (cart.length > 0) {
         //calculate total
         total = cart.reduce((acc, cartLine) => acc + cartLine.price * cartLine.quantity, 0);
+        //round to 2 decimal places
+        total = Math.round(total * 100) / 100;
+        //convert to string with 2 decimal places
+        total = total.toFixed(2);
     }
 
     return (

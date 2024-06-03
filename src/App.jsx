@@ -4,8 +4,8 @@ import AdminPage from './AdminPage.jsx'
 import Cart from './Cart.jsx'
 import MainPage from './MainPage.jsx'
 import ProductsForSale from './ProductsForSale.jsx'
-import { ProductContext } from './ProductContext.jsx'
-import { CartContext } from './CartContext.jsx'
+import { ProductContext } from './context/ProductContext.jsx'
+import { CartContext } from './context/CartContext.jsx'
 import { useState } from 'react'
 import product_list from './data/product_list';
 
