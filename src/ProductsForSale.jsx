@@ -12,13 +12,13 @@ function ProductsForSale() {
     const img_src = (img) => { return new URL(img, import.meta.url).href; };
 
     return (
-        <>
+        <div className='products'>
             {products.map(product => (
                
             <div className='product' key={product.id}>
                     <img src={img_src(product.img)} alt={product.name} />
                     <h2>{product.name}</h2>
-                    <p>{product.description}</p>
+                    <p className='productDescription' >{product.description}</p>
                     <p>Price: {product.price.toFixed(2)}</p>
                     <button onClick={() => {
                         //prepare cart line
@@ -51,7 +51,7 @@ function ProductsForSale() {
                     }}>Add to cart</button>
                 </div>
             ))}
-        </>
+        </div>
     );
 }
 
