@@ -2,24 +2,34 @@ import PropTypes from 'prop-types';
 import { useContext, Image } from 'react';
 import { ProductContext } from './context/ProductContext.jsx';
 import { CartContext } from './context/CartContext.jsx';
+import { CurrentProductContext } from './context/CurrentProductContext.jsx';
 import './ProductsForSale.css';
+import { useNavigate } from 'react-router-dom';
+
+
 
 
 function ProductsForSale() {
-    console.log('ProductsForSale');
+    console.log('ProductsForSale');    
     const { products, setProducts } = useContext(ProductContext);
     const { cart, setCart } = useContext(CartContext);
+    const { product, setProduct } = useContext(CurrentProductContext);
+    const navigate = useNavigate();
     const img_src = (img) => { return new URL(img, import.meta.url).href; };
 
     return (
         <div className='products'>
             {products.map(product => (
                
-            <div className='product' key={product.id}>
-                    <img src={img_src(product.img)} alt={product.name} />
+                <div className='product' key={product.id}>
+                    <img src={img_src(product.img)} alt={product.name} onClick={() => {
+                        setProduct(product);
+                        console.log('Navigate to product page:', product);
+                        navigate('/product');                        
+                    }} />
                     <h2>{product.name}</h2>
                     <p className='productDescription' >{product.description}</p>
-                    <p>Price: {product.price.toFixed(2)}</p>
+                    <p>Price: ${product.price.toFixed(2)}</p>
                     <button onClick={() => {
                         //prepare cart line
                         //cart line is project plus quantity

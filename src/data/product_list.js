@@ -24,7 +24,7 @@ const product_list = [
         id: 4,
         name: 'Eggplant',
         price: 4.20,
-        description: 'A versatile, spongy vegetable with a mild flavor, eggplant is commonly used in various cuisines. It can be grilled, roasted, baked, or sautéed.',
+        description: 'A versatile, spongy vegetable with a mild flavor, eggplant is commonly used in various cuisines. It can be grilled, roasted, baked, or sauteed.',
         img: './images/eggplant.jpg'
 
     }];
