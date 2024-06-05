@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
-import './Cart.css';
+import './CartPage.css';
 import { CartContext } from './context/CartContext.jsx';
 import { useContext } from 'react';
 
 
-function Cart() {
+function CartPage() {
 
     const { cart, setCart } = useContext(CartContext);
     const img_src = (img) => { return new URL(img, import.meta.url).href; };
@@ -72,9 +72,9 @@ function Cart() {
     );
 }
 
-Cart.propTypes = {
+CartPage.propTypes = {
     cart: PropTypes.array,
     setCart: PropTypes.func
 };
 
-export default Cart;
+export default CartPage;

@@ -1,9 +1,9 @@
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import AdminPage from './AdminPage.jsx'
-import Cart from './Cart.jsx'
+import CartPage from './CartPage.jsx'
 import MainPage from './MainPage.jsx'
-import ProductsForSale from './ProductsForSale.jsx'
+import ProductsForSalePage from './ProductsForSalePage.jsx'
 import ProductPage from './ProductPage.jsx';
 import { ProductsContext } from './context/ProductsContext.jsx'
 import { CartContext } from './context/CartContext.jsx'
@@ -24,9 +24,9 @@ function App() {
                 <ProductsContext.Provider value={{ products, setProducts }}>
                     <Routes>
                         <Route path="/" element={<MainPage />}>
-                            <Route index element={<ProductsForSale />} />
+                            <Route index element={<ProductsForSalePage />} />
                             <Route path="/admin" element={<AdminPage />} />
-                            <Route path="/cart" element={<Cart />} />
+                            <Route path="/cart" element={<CartPage />} />
                             <Route path="/product" element={<ProductPage />} />
                             <Route other element={<h1>404 - Not Found</h1>} />
                         </Route>

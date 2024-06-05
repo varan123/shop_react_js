@@ -3,13 +3,13 @@ import { useContext, Image } from 'react';
 import { ProductsContext } from './context/ProductsContext.jsx';
 import { CartContext } from './context/CartContext.jsx';
 import { CurrentProductContext } from './context/CurrentProductContext.jsx';
-import './ProductsForSale.css';
+import './ProductsForSalePage.css';
 import { useNavigate } from 'react-router-dom';
 
 
 
 
-function ProductsForSale() {
+function ProductsForSalePage() {
     console.log('ProductsForSale');    
     const { products, setProducts } = useContext(ProductsContext);
     const { cart, setCart } = useContext(CartContext);
@@ -65,11 +65,11 @@ function ProductsForSale() {
     );
 }
 
-ProductsForSale.propTypes = {
+ProductsForSalePage.propTypes = {
     currentCart: PropTypes.array,
     setCurrentCart: PropTypes.func,
     products: PropTypes.array,
     setProducts: PropTypes.func
 };
 
-export default ProductsForSale;
+export default ProductsForSalePage;
