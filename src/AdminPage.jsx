@@ -1,13 +1,14 @@
 import { useContext } from 'react';
-import { ProductContext } from './context/ProductContext.jsx'
+import { ProductsContext } from './context/ProductsContext.jsx'
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
+import './AdminPage.css';
 
 const addNewProduct = (e, products, setProducts) => {
     e.preventDefault();
     const name = e.target.name.value;
     const description = e.target.description.value;
-    const price = e.target.price.value;
+    const price = Number(e.target.price.value);
     const newProduct = {
         id: products.length + 1,
         name: name,
@@ -23,11 +24,11 @@ const addNewProduct = (e, products, setProducts) => {
 function AdminPage() {
     const navigate = useNavigate();
 
-    const { products, setProducts } = useContext(ProductContext);
+    const { products, setProducts } = useContext(ProductsContext);
     console.log(products);
     console.log(setProducts);
     return (
-        <>
+        <div className='addProduct'>
             <p>Admin page</p>
             <form onSubmit={(e) => {
                 if (isNaN(e.target.price.value)) {
@@ -38,20 +39,20 @@ function AdminPage() {
                 navigate("/");
             }}>
                 <label>
-                    Name:
+                    <span>Name:</span>
                     <input type="text" name="name" />
                 </label><br />
                 <label>
-                    Description:
+                    <span>Description:</span>
                     <input type="text" name="description" />
                 </label><br />
                 <label>
-                    Price:
+                    <span>Price:</span>
                     <input type="text" name="price" />
                 </label><br />
-                <button type="submit">Create</button>
+                <button type="submit">Add Product</button>
             </form>
-        </>
+        </div>
     );
 }
 

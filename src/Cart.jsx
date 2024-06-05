@@ -3,18 +3,21 @@ import './Cart.css';
 import { CartContext } from './context/CartContext.jsx';
 import { useContext } from 'react';
 
+
 function Cart() {
 
     const { cart, setCart } = useContext(CartContext);
+    const img_src = (img) => { return new URL(img, import.meta.url).href; };
 
     let returnVal = ""
 
     //if cart is not empty
     if (cart.length > 0) {
         returnVal = cart.map(cartLine => (
-            <div key={cartLine.id}>
+            <div className="cartLine" key={cartLine.id}>
+                <img src={img_src(cartLine.img)} alt={cartLine.name} />
                 <h2>{cartLine.name}</h2>
-                <p>Price: {cartLine.price.toFixed(2)}</p>
+                <p>Price: ${cartLine.price.toFixed(2)}</p>
                 <p>Quantity:
                     <input className="quantity" type="number" min="1" value={cartLine.quantity} onChange={(e) => {
                         //clone the current cart
@@ -64,7 +67,7 @@ function Cart() {
         <>
             <p>Cart</p>
             {returnVal}
-            <p>Total: {total}</p>
+            <p>Total: ${total}</p>
         </>
     );
 }

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useContext, Image } from 'react';
-import { ProductContext } from './context/ProductContext.jsx';
+import { ProductsContext } from './context/ProductsContext.jsx';
 import { CartContext } from './context/CartContext.jsx';
 import { CurrentProductContext } from './context/CurrentProductContext.jsx';
 import './ProductsForSale.css';
@@ -11,7 +11,7 @@ import { useNavigate } from 'react-router-dom';
 
 function ProductsForSale() {
     console.log('ProductsForSale');    
-    const { products, setProducts } = useContext(ProductContext);
+    const { products, setProducts } = useContext(ProductsContext);
     const { cart, setCart } = useContext(CartContext);
     const { product, setProduct } = useContext(CurrentProductContext);
     const navigate = useNavigate();

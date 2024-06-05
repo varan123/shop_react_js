@@ -1,2 +1,17 @@
-body {
+.productPage {
+  display: block;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.productPage img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  margin: 20px 0;
 }

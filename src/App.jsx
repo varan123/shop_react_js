@@ -5,7 +5,7 @@ import Cart from './Cart.jsx'
 import MainPage from './MainPage.jsx'
 import ProductsForSale from './ProductsForSale.jsx'
 import ProductPage from './ProductPage.jsx';
-import { ProductContext } from './context/ProductContext.jsx'
+import { ProductsContext } from './context/ProductsContext.jsx'
 import { CartContext } from './context/CartContext.jsx'
 import { CurrentProductContext } from './context/CurrentProductContext.jsx'
 import { useState } from 'react';
@@ -21,7 +21,7 @@ function App() {
     return (
         <CurrentProductContext.Provider value={{ product, setProduct }}>
             <CartContext.Provider value={{ cart, setCart }}>
-                <ProductContext.Provider value={{ products, setProducts }}>
+                <ProductsContext.Provider value={{ products, setProducts }}>
                     <Routes>
                         <Route path="/" element={<MainPage />}>
                             <Route index element={<ProductsForSale />} />
@@ -31,7 +31,7 @@ function App() {
                             <Route other element={<h1>404 - Not Found</h1>} />
                         </Route>
                     </Routes>
-                </ProductContext.Provider >
+                </ProductsContext.Provider >
             </CartContext.Provider>
         </CurrentProductContext.Provider>
     )
