@@ -67,7 +67,7 @@ function CartPage() {
         <>
             <p>Cart</p>
             {returnVal}
-            <p>Total: ${total}</p>
+            <p className="cartTotal">Total: ${total}</p>
         </>
     );
 }

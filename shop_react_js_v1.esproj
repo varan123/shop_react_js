@@ -11,6 +11,7 @@
   <ItemGroup>
     <Folder Include="public\" />
     <Folder Include="src\components\" />
+    <Folder Include="src\hooks\" />
     <Folder Include="src\images\" />
     <Folder Include="src\pages\" />
   </ItemGroup>

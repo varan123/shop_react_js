@@ -1,11 +1,11 @@
-import { useContext, Image } from 'react';
+import { useContext } from 'react';
 import { CartContext } from './context/CartContext.jsx';
 import { CurrentProductContext } from './context/CurrentProductContext.jsx';
 import './ProductPage.css';
 import { useNavigate } from 'react-router-dom';
 
 function ProductPage() {
-    const { product, setProduct } = useContext(CurrentProductContext);
+    const { product } = useContext(CurrentProductContext);
     const { cart, setCart } = useContext(CartContext);
     const navigate = useNavigate();
     const img_src = (img) => { return new URL(img, import.meta.url).href; };

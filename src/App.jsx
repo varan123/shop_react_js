@@ -8,15 +8,38 @@ import ProductPage from './ProductPage.jsx';
 import { ProductsContext } from './context/ProductsContext.jsx'
 import { CartContext } from './context/CartContext.jsx'
 import { CurrentProductContext } from './context/CurrentProductContext.jsx'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import product_list from './data/product_list';
 
 
 function App() {
-
-    const [products, setProducts] = useState(product_list);
+    //const result = useFetch('http://localhost:8080/product/all');
+    const [products, setProducts] = useState(product_list);    
     const [cart, setCart] = useState([]);
     const [product, setProduct] = useState(null);
+
+    useEffect(() => {
+       
+        async function fetchData() {
+            const product_list2 = [];
+            const response = await fetch('http://localhost:8080/product/all');
+            if (response.ok) {
+                const json = await response.json();
+                //log the result
+                console.log('Result:', json);
+                json.map(element => {
+                    const product = { id: element.id, name: element.name, description: '', price: 1 };
+                    product_list2.push(product);
+                });
+                setProducts(product_list2);
+            } else {
+                setProducts(product_list);
+            }
+        }
+
+        fetchData();
+        
+    }, []);
 
     return (
         <CurrentProductContext.Provider value={{ product, setProduct }}>
@@ -33,7 +56,7 @@ function App() {
                     </Routes>
                 </ProductsContext.Provider >
             </CartContext.Provider>
-        </CurrentProductContext.Provider>
+            </CurrentProductContext.Provider>
     )
 }
 

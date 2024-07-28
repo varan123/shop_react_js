@@ -15,7 +15,7 @@ function MainPage() {
             <header><Logo />Demo Shop v1 (React, JS)</header>
             <MainMenu cart = {cart} />
             <Outlet />
-            <footer>&copy; 2024 Mike Pavlov</footer>            
+            <footer>&copy; 2024 Mike Pavlov</footer>
         </>
 
     );
